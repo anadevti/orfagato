@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orfagato</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (ícones) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilo adicional para personalização */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1628612380382-e6204e135307?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .btn-primary {
+            background-color: #f77f00;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #e76f51;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Orfagato</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adocao">Adote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bem-vindo ao Orfagato</h1>
+            <p>Adote um amigo de quatro patas e transforme vidas!</p>
+            <a href="/adocao" class="btn btn-primary btn-lg">Quero Adotar</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light">
+    <style>
+        /* Estilo geral da seção */
+        #about {
+            background: linear-gradient(135deg, #f9f9f9, #e3a96f);
+            padding: 50px 0;
+        }
+
+        #about h2 {
+            color: #000000;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        #about p {
+            color: #4a4a4a;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Card de destaque */
+        .about-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Ícone decorativo */
+        .about-icon {
+            font-size: 3rem;
+            color: #e3a96f;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <div class="container">
+        <h2 class="text-center">Sobre Nós</h2>
+        <p class="text-center">
+            O Orfagato é uma iniciativa que transforma vidas, dedicada a encontrar lares cheios de amor e cuidado para gatos resgatados. Nosso propósito é incentivar a adoção responsável, proporcionando uma nova chance de felicidade para esses amigos de quatro patas que tanto merecem.
+        </p>
+
+        <!-- Card de destaque -->
+        <div class="about-card text-center">
+            <div class="about-icon">
+                <i class="fas fa-cat"></i>
+            </div>
+            <p>
+                Acreditamos que cada gatinho merece uma vida cheia de amor e segurança. Nosso trabalho é garantir que cada resgate seja tratado com carinho e tenha a oportunidade de encontrar uma família especial.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="por-que-adotar" class="py-5 bg-light">
+    <style>
+        /* Estilo geral da seção */
+        #about {
+            background: linear-gradient(135deg, #f9f9f9, #e3a96f);
+            padding: 10px 0;
+        }
+        /* Botão central estilizado */
+        .card-header {
+            background: linear-gradient(135deg, #f66868, #e3a96f);
+            color: #000000;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .card-body {
+            background-color: #f9f9f9;
+        }
+
+        .card-header:hover {
+            background-color: #618621;
+        }
+
+        .animate-title {
+            animation: fadeInDown 1.5s ease-in-out;
+            text-align: center;
+            color: #000000;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2 class="animate-title mb-4">Por que Adotar um Gato?</h2>
+        <p class="text-center mb-5">
+            Adotar um gato é um ato de amor, compaixão e responsabilidade que traz benefícios tanto para o animal quanto para quem o acolhe.
+        </p>
+
+        <div class="accordion" id="accordionExample">
+            <!-- Card 1 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Um Novo Começo para o Gato
+                </button>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Ao adotar, você oferece uma segunda chance a um animal que muitas vezes foi abandonado, resgatado de situações difíceis ou que simplesmente ainda não encontrou um lar. Adotar significa salvar uma vida e proporcionar a um gato o cuidado, a segurança e o amor que ele tanto merece.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Companheiros Leais e Afetuosos
+                </button>
+                <div id="collapseTwo" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Apesar de serem conhecidos por sua independência, os gatos criam laços profundos com seus tutores. Eles são companheiros carinhosos, atentos às emoções e ótimos para aliviar o estresse do dia a dia. Seja com um ronronar aconchegante ou uma brincadeira inesperada, eles têm o poder de transformar qualquer ambiente em um lar acolhedor.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Adoção Responsável Salva Vidas
+                </button>
+                <div id="collapseThree" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Ao optar por adotar em vez de comprar, você ajuda a combater a superpopulação de animais e reduz a demanda por criadouros que muitas vezes exploram os bichos. Além disso, ao adotar de uma organização ou abrigo, você abre espaço para que mais animais em situação de risco possam ser resgatados e cuidados.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Benefícios para a Saúde e o Bem-Estar
+                </button>
+                <div id="collapseFour" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Estudos mostram que conviver com animais pode melhorar a saúde mental e emocional. Os gatos, em especial, ajudam a reduzir a ansiedade, combater a solidão e até mesmo diminuir a pressão arterial. Adotar um gato é bom para o coração – no sentido literal e figurado!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Personalidade para Todos os Gostos
+                </button>
+                <div id="collapseFive" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Cada gato tem sua própria personalidade, e há sempre um que combina com você! Existem gatos brincalhões, mais calmos, independentes ou extremamente carinhosos. Ao adotar, você pode conhecer o comportamento do animal e encontrar aquele que se ajusta ao seu estilo de vida.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Economia e Cuidado
+                </button>
+                <div id="collapseSix" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        A maioria dos gatos disponíveis para adoção já vem castrada, vacinada e com atendimento veterinário inicial realizado, o que representa uma economia significativa em comparação a adquirir um animal de outra forma. Além disso, organizações de adoção costumam orientar os novos tutores sobre os cuidados necessários, garantindo uma transição tranquila.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card mb-3">
+                <button class="card-header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    7. Uma Decisão que Transforma Vidas
+                </button>
+                <div id="collapseSeven" class="collapse" data-bs-parent="#accordionExample">
+                    <div class="card-body">
+                        Adotar um gato é mais do que acolher um animal: é criar um vínculo profundo e significativo. É saber que, ao dar amor e cuidado, você está recebendo lealdade, carinho e alegria em troca.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <style>
+            /* Estilo geral da seção */
+            #contact {
+                background: linear-gradient(135deg, #f9f9f9, #e3a96f);
+                padding: 50px 0;
+            }
+
+            #contact h2 {
+                color: #000000;
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
+            }
+
+            #contact p {
+                color: #4a4a4a;
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+
+            /* Botão central estilizado */
+            .btn-primary {
+                background-color: #f77f00;
+                border: none;
+            }
+
+            .btn-primary:hover {
+                background-color: #e76f51;
+            }
+        </style>
+        <div class="container">
+            <h2 class="text-center mb-4">Fale Conosco</h2>
+            <p class="text-center">Entre em contato para mais informações sobre adoção.</p>
+            <div class="text-center">
+                <a href="mailto:orfagato@example.com" class="btn btn-primary">Enviar E-mail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Orfagato. Todos os direitos reservados.
+        Feito com ❤️🐾 por Ana Carolyne
+   <a href="https://github.com/anadevti" target="_blank" class="text-light fw-bold">
+        <i class="fab fa-github"></i>
+    </a>
+
+        </p>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

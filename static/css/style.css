@@ -1,0 +1,82 @@
+/* Estilo geral do formulário */
+form {
+    margin: 20px auto;
+    max-width: 600px;
+    background: #fefefe; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f4a261; /* Bordas com cor tema */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para o título */
+h1 {
+    text-align: center;
+    color: #264653; /* Cor tema */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Adiciona um ícone de gato ao lado do título */
+h1::before {
+    content: "🐾 "; /* Emoji de pata de gato */
+    font-size: 1.5rem;
+}
+
+h1::after {
+    content: " 🐾";
+    font-size: 1.5rem;
+}
+
+/* Estilo para os labels */
+label {
+    font-weight: bold;
+    color: #2a9d8f; /* Verde suave */
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Campos de texto */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para os botões */
+button[type="submit"] {
+    background: #e76f51; /* Botão com cor tema */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #d65a3f;
+}
+
+/* Fundo com leve tema */
+body {
+    background-color: #fef6e4; /* Fundo suave */
+}
+
+/* Pata de gato como decoração no rodapé do formulário */
+form::after {
+    content: "🐾 Adote com amor!";
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e76f51;
+    margin-top: 10px;
+}

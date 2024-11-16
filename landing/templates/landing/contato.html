@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Orfagato</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contact-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .contact-section {
+            background-color: #fef6e4;
+            padding: 50px 0;
+        }
+        .btn-contact {
+            background-color: #e76f51;
+            color: white;
+            border: none;
+        }
+        .btn-contact:hover {
+            background-color: #d65a3f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Orfagato</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adocao/">Adote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact/">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<section class="contact-section">
+    <style>
+        /* Estilo para os cards de contato */
+        .contact-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-contact {
+            background-color: #f77f00;
+            color: white;
+            border: none;
+        }
+
+        .btn-contact:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .contact-card i {
+            color: #2a9d8f;
+        }
+    </style>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Entre em Contato</h2>
+        <p class="text-center mb-5">Entre em contato conosco por qualquer um dos meios abaixo. Ficaremos felizes em ajudar!</p>
+
+        <div class="row">
+            <!-- E-mail -->
+            <div class="col-md-4 mb-4 d-flex">
+                <div class="card contact-card p-4 text-center">
+                    <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">E-mail</h5>
+                    <p class="card-text">Envie-nos um e-mail para mais informações.</p>
+                    <a href="mailto:orfagato@example.com" class="btn btn-contact mt-auto">Enviar E-mail</a>
+                </div>
+            </div>
+
+            <!-- Telefone -->
+            <div class="col-md-4 mb-4 d-flex">
+                <div class="card contact-card p-4 text-center">
+                    <i class="fas fa-phone fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Telefone</h5>
+                    <p class="card-text">Estamos disponíveis para ligações e WhatsApp.</p>
+                    <a href="tel:+551199999999" class="btn btn-contact mt-auto">Ligar Agora</a>
+                </div>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="col-md-4 mb-4 d-flex">
+                <div class="card contact-card p-4 text-center">
+                    <i class="fas fa-share-alt fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Redes Sociais</h5>
+                    <p class="card-text">Siga-nos nas redes sociais para atualizações e novidades.</p>
+                    <a href="https://www.instagram.com/orfagato.mga/" target="_blank" class="btn btn-contact mt-auto">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Orfagato. Todos os direitos reservados.
+        Feito com ❤️🐾 por Ana Carolyne
+   <a href="https://github.com/anadevti" target="_blank" class="text-light fw-bold">
+        <i class="fab fa-github"></i>
+    </a>
+
+        </p>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
