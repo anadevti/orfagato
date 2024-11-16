@@ -1,4 +1,6 @@
 # Orfagato 🐈‍⬛
+![claudia-perez-pXn7_SAkTZ4-unsplash](https://github.com/user-attachments/assets/1d2ddb34-d876-4ccd-8592-afb996caf2cd)
+
 
 Orfagato é um projeto voluntário de software desenvolvido para auxiliar no processo de adoção de gatos, facilitando o gerenciamento de informações sobre os gatos disponíveis para adoção e os adotantes, além de agendar e registrar visitas para adoção.
 
