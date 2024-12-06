@@ -16,18 +16,15 @@ spec:
     spec:
       containers:
         - name: django
-          image: python:3.10
-          command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+          image: python:3.12
+          command: ["python manage.py runserver"]
           ports:
             - containerPort: 8000
           env:
             - name: DJANGO_SETTINGS_MODULE
               value: "orfagato.settings"  # Modifique com o caminho do seu settings
-          volumeMounts:
-            - name: env-volume
-              mountPath: /app/.env
-              subPath: .env
-          workingDir: /app
+
+          workingDir: /orfagato
           # Instalar dependências
           lifecycle:
             postStart:
