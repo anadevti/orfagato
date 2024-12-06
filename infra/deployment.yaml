@@ -5,13 +5,6 @@ metadata:
 spec:
   containers:
     - name: django
-      image: python:3.12
-      command: ["sh", "-c", "source /app/venv/bin/activate && python manage.py runserver 0.0.0.0:8000"]
-      workingDir: /app
-      volumeMounts:
-        - name: orfagato-code
-          mountPath: /app
-  volumes:
-    - name: orfagato-code
-      hostPath:
-        path: /caminho/para/seu/projeto/orfagato
+      image: orfagato-django
+      ports:
+        - containerPort: 8000
