@@ -1,57 +1,17 @@
-﻿apiVersion: apps/v1
-kind: Deployment
+﻿apiVersion: v1
+kind: Pod
 metadata:
-  name: orfagato
-  labels:
-    app: orfagato
+  name: orfagato-django
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: orfagato
-  template:
-    metadata:
-      labels:
-        app: orfagato
-    spec:
-      containers:
-        - name: django
-          image: python:3.12
-          command: ["python manage.py runserver"]
-          ports:
-            - containerPort: 8000
-          env:
-            - name: DJANGO_SETTINGS_MODULE
-              value: "orfagato.settings"  # Modifique com o caminho do seu settings
-
-          workingDir: /orfagato
-          # Instalar dependências
-          lifecycle:
-            postStart:
-              exec:
-                command: ["pip install -r requirements.txt"]
-
-      volumes:
-        - name: env-volume
-          configMap:
-            name: django-env-config
-
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: django-env-config
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: django-service
-spec:
-  selector:
-    app: orfagato
-  ports:
-    - protocol: TCP
-      port: 8000
-      targetPort: 8000
-  type: LoadBalancer
+  containers:
+    - name: django
+      image: python:3.12
+      command: ["sh", "-c", "source /app/venv/bin/activate && python manage.py runserver 0.0.0.0:8000"]
+      workingDir: /app
+      volumeMounts:
+        - name: orfagato-code
+          mountPath: /app
+  volumes:
+    - name: orfagato-code
+      hostPath:
+        path: /caminho/para/seu/projeto/orfagato
