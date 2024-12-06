@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: orfagato-django-service
+spec:
+  selector:
+    app: orfagato-django
+  ports:
+    - protocol: TCP
+      port: 8000 # Porta do serviço acessível internamente no cluster
+      targetPort: 8000 # Porta do contêiner que está ouvindo
+      nodePort: 30007 # Porta do nó onde o serviço será exposto (opcional, pode ser qualquer valor entre 30000-32767)
+  type: NodePort
