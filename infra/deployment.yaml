@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: django
-      image: aninha/orfagato-django:latest
+      image: aninhadev/orfagato-django
       ports:
         - containerPort: 8000
