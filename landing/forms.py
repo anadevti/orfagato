@@ -1,8 +1,15 @@
 from django import forms
+from django.db.models import IntegerField
+
 
 class AdocaoForm(forms.Form):
     nome = forms.CharField(label="Qual seu nome?", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     idade = forms.IntegerField(label="Sua idade?", widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    numero_contato = forms.CharField(
+        label="Qual seu número para entrarmos em contato?",
+        max_length=15,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex.: +55 11 12345-4321'})
+    )
     trabalha = forms.ChoiceField(
         label="Trabalha?",
         choices=[('sim', 'Sim'), ('nao', 'Não')],
