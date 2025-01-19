@@ -14,5 +14,5 @@ COPY . /app/
 # Expondo a porta que o Django usará
 EXPOSE 8000
 
-# Comando padrão para rodar o servidor Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Executando as migrações antes de iniciar o servidor
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
