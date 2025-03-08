@@ -7,4 +7,5 @@ metadata:
     backstage.io/techdocs-ref: dir:./docs
 spec:
   type: website
+  lifecycle: experimental
   owner: anadevti
