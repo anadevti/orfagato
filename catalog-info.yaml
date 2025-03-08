@@ -5,6 +5,7 @@ metadata:
   description: Projeto Orfagato com documentação gerada pelo TechDocs.
   annotations:
     backstage.io/techdocs-ref: dir:./docs
+    github.com/project-slug: anadevti/orfagato
 spec:
   type: website
   lifecycle: experimental
