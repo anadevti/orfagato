@@ -1,6 +1,6 @@
 site_name: Orfagato Docs
-docs_dir: docs
-repo_url: https://github.com/anadevti/orfagato
-edit_uri: edit/main/docs
+docs_dir: .
 nav:
   - Home: index.md
+repo_url: https://github.com/anadevti/orfagato
+edit_uri: edit/main/docs
