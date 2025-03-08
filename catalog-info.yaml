@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orfagato
+  description: Projeto Orfagato com documentação gerada pelo TechDocs.
+  annotations:
+    backstage.io/techdocs-ref: dir:./docs
+spec:
+  type: website
+  owner: anadevti
