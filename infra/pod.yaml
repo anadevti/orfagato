@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Pod
+metadata:
+  name: orfagato-django
+  labels:
+    app: orfagato-django
+spec:
+  containers:
+    - name: django
+      image: aninhadev/orfagato-django
+      ports:
+        - containerPort: 8000

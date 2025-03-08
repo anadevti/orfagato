@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orfagato - Adote um Gatinho</title>
+    <!-- SEO Tags -->
+    <meta name="description" content="Adote um gatinho! Confira os gatinhos disponíveis para adoção e ajude a dar um lar amoroso a eles.">
+    <meta name="keywords" content="adoção de gatos, adotar gato, gatinhos disponíveis, orfagato">
+    <meta name="author" content="Ana Carolyne">
+    <meta property="og:title" content="Adote um Gatinho - Orfagato">
+    <meta property="og:description" content="Ajude um gatinho a encontrar um lar amoroso!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1628612380382-e6204e135307?q=80&w=2070&auto=format&fit=crop">
+    <meta property="og:url" content="https://seusite.com/adocao">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (ícones) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilo adicional para personalização */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1628612380382-e6204e135307?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .btn-primary {
+            background-color: #f77f00;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #e76f51;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Orfagato</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/sobre' %}active{% endif %}" href="/sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/adocao' %}active{% endif %}" href="/adocao">Adote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contato' %}active{% endif %}" href="/contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Adote um Gatinho</h1>
+        <p>Conheça nossos gatinhos disponíveis para adoção e escolha seu novo amigo!</p>
+    </div>
+
+    <!-- Seção de Adoção -->
+    <section id="adopt" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Gatinhos Disponíveis</h2>
+            <p class="text-center mb-5">Veja as informações de cada gatinho e entre em contato para adotar!</p>
+
+            <div class="row">
+                {% for gato in gatos %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        {% if gato.imagem %}
+                        <img src="{{ gato.imagem.url }}" class="card-img-top" alt="{{ gato.nome }}">
+                        {% else %}
+                        <img src="https://placekitten.com/400/300" class="card-img-top" alt="Imagem padrão">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ gato.nome }}</h5>
+                            <ul class="list-unstyled">
+                                <li><strong>Idade:</strong> {{ gato.idade }} anos</li>
+                                <li><strong>Sexo:</strong> {{ gato.sexo }}</li>
+                                <li><strong>Castrado:</strong> {{ gato.castrado|yesno:"Sim,Não" }}</li>
+                                <li><strong>FIV/FELV:</strong> {{ gato.fiv_felv }}</li>
+                                <li><strong>Vacinado:</strong> {{ gato.vacinado|yesno:"Sim,Não" }}</li>
+                                <li><strong>Sobre mim:</strong> {{ gato.descricao}}</li>
+                            </ul>
+                            <a href="#formulario-adocao" class="btn btn-primary w-100" aria-label="Adotar o gatinho {{ gato.nome }}">Adotar</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Adoção -->
+    <section id="formulario-adocao" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Formulário de Adoção</h2>
+            <p class="text-center mb-4">Por favor, responda as perguntas abaixo para iniciarmos o processo de adoção.</p>
+            <form method="post" action="{% url 'adocao' %}">
+                {% csrf_token %}
+                <div class="row">
+                    {% for field in form %}
+                    <div class="col-md-6 mb-3">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.errors %}
+                        <small class="text-danger">{{ field.errors }}</small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Orfagato. Todos os direitos reservados. Feito com ❤️🐾 por Ana Carolyne
+            <a href="https://github.com/anadevti" target="_blank" class="text-light fw-bold">
+                <i class="fab fa-github"></i>
+            </a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
