@@ -6,7 +6,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:./docs
     github.com/project-slug: anadevti/orfagato
-    pagerduty.com/integration-key: u+PhBgbNkbbKfWR28zYA
+    pagerduty.com/service-id: P26ZDZH
 spec:
   type: website
   lifecycle: experimental
