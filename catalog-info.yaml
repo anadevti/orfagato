@@ -4,7 +4,7 @@ metadata:
   name: orfagato
   description: Projeto Orfagato com documentação gerada pelo TechDocs.
   annotations:
-    backstage.io/techdocs-ref: dir:./docs
+    backstage.io/techdocs-ref: dir:.
     github.com/project-slug: anadevti/orfagato
     pagerduty.com/service-id: P26ZDZH
 spec:
